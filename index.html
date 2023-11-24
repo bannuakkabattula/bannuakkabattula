@@ -171,7 +171,8 @@
                 <a href="https://github.com/bannuakkabattula"><i class="lab la-github"></i></a>
             </li>
         </ul>
-        <a href="#" class="theme-btn">
+        <a href="https://api.whatsapp.com/send?phone=918790084698&text=Hello,%20I%20have%20a%20question%20about%20http%3A%2F%2F127.0.0.1%3A5501%2Findex.html"
+            class="theme-btn">
             <i class="las la-envelope"></i> Get in touch
         </a>
     </div>
@@ -456,8 +457,7 @@
                             </h3>
                             <p id="required-msg">* Marked fields are required to fill.</p>
 
-                            <form class="contact-form scroll-animation" data-animation="fade_from_bottom" method="POST"
-                                action="https://www.wpriverthemes.com/HTML/drake/mailer.php">
+                            <form class="contact-form scroll-animation" data-animation="fade_from_bottom" method="POST">
                                 <div class="alert alert-success messenger-box-contact__msg" style="display: none"
                                     role="alert">
                                     Your message was sent successfully.
@@ -520,6 +520,9 @@
     </main>
 
 
+
+
+
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/owl.carousel.js"></script>
@@ -567,6 +570,52 @@
         var x = document.getElementsByTagName('script')[0];
         x.parentNode.insertBefore(s, x);
     </script>
+
+
+
+    <!-- Contact Form Script Start -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#countryCode, #mobile').on('change input', function () {
+                var countryCode = $('#countryCode').val();
+                var phoneNumber = $('#mobile').val();
+                var phoneFinalValue = '+' + countryCode + phoneNumber;
+                $('#phone_number').val(phoneFinalValue);
+                console.log(phoneFinalValue);
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('nWvr07MGyi63nfJ-H') // Change this for production
+    </script>
+
+    <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'service_jkanq3d'; // Change this for production
+                const templateID = 'template_810untn'; // Change this for production
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        //   btn.value = 'Email Sent';
+                        alert('Sent!');
+                    }, (err) => {
+                        //   btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });
+    </script>
+
+
+    <!-- Contact Form Script End -->
 </body>
 
 

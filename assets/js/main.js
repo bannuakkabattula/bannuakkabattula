@@ -271,3 +271,76 @@ function scroll_animations() {
     });
 }
 scroll_animations();
+
+
+
+
+
+
+
+ 
+
+
+    $(document).ready(function () {
+        $('#countryCode, #mobile').on('change input', function () {
+            var countryCode = $('#countryCode').val();
+            var phoneNumber = $('#mobile').val();
+            var phoneFinalValue = '+' + countryCode + phoneNumber;
+            $('#phone_number').val(phoneFinalValue);
+            console.log(phoneFinalValue);
+        });
+    });
+
+
+
+    emailjs.init('nWvr07MGyi63nfJ-H') // Change this for production
+
+
+
+    const btn = document.getElementById('button');
+
+    document.getElementById('form')
+        .addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            btn.value = 'Sending...';
+
+            const serviceID = 'service_jkanq3d'; // Change this for production
+            const templateID = 'template_810untn'; // Change this for production
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    //   btn.value = 'Email Sent';
+                    alert('Sent!');
+                }, (err) => {
+                    //   btn.value = 'Send Email';
+                    alert(JSON.stringify(err));
+                });
+        });
+
+
+
+    const btn2 = document.getElementById('button');
+
+    document.getElementById('contact-form')
+        .addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            btn2.value = 'Sent...';
+
+            const serviceID = 'service_jkanq3d'; // Change this for production
+            const templateID = 'template_mp2pxg4'; // Change this for production
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    //   btn.value = 'Email Sent';
+                    alert('Sent!');
+                   
+                }, (err) => {
+                    //   btn.value = 'Send Email';
+                    alert(JSON.stringify(err));
+                });
+                document.getElementById('email_name').value = '';
+        });
+
+
