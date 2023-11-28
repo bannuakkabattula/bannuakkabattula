@@ -31,6 +31,12 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 46px;
+        border: 8px solid white;
+        padding: 10px;
+    }
+    .left-sidebar > img.me:hover {
+        border: 8px solid  var(--primary_color);
+        padding: 10px;
     }
     .left-sidebar .sidebar-header .designation {
         line-height: 1.4;
