@@ -1991,3 +1991,8 @@ body .body-overlay {
 .global-color .setting-toggle i {
     animation: rotating 3s infinite linear !important;
 }
+
+.workDescription{
+    padding-bottom: 5px;
+    margin-bottom: 0 !important;
+}
