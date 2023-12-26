@@ -667,21 +667,10 @@
 
 
     <!-- Contact Form Script Start -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#countryCode, #mobile').on('change input', function () {
-                var countryCode = $('#countryCode').val();
-                var phoneNumber = $('#mobile').val();
-                var phoneFinalValue = '+' + countryCode + phoneNumber;
-                $('#phone_number').val(phoneFinalValue);
-                console.log(phoneFinalValue);
-            });
-        });
-    </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script type="text/javascript">
-        emailjs.init('nWvr07MGyi63nfJ-H') // Change this for production
+        emailjs.init('nWvr07MGyi63nfJ-H')
     </script>
 
     <script>
@@ -693,15 +682,15 @@
 
                 btn.value = 'Sending...';
 
-                const serviceID = 'service_jkanq3d'; // Change this for production
-                const templateID = 'template_810untn'; // Change this for production
+                const serviceID = 'service_jkanq3d';
+                const templateID = 'template_810untn';
 
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
-                        //   btn.value = 'Email Sent';
+                        btn.value = 'Send Email';
                         alert('Sent!');
                     }, (err) => {
-                        //   btn.value = 'Send Email';
+                        btn.value = 'Send Email';
                         alert(JSON.stringify(err));
                     });
             });
