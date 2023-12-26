@@ -550,11 +550,11 @@
                             </h3>
                             <p id="required-msg">* Marked fields are required to fill.</p>
 
-                            <form class="contact-form scroll-animation" data-animation="fade_from_bottom" method="POST">
-                                <div class="alert alert-success messenger-box-contact__msg" style="display: none"
+                            <form class="contact-form scroll-animation" id="form" data-animation="fade_from_bottom">
+                                <!-- <div class="alert alert-success messenger-box-contact__msg" style="display: none"
                                     role="alert">
                                     Your message was sent successfully.
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-group">
@@ -598,8 +598,9 @@
                                     </div> -->
                                     <div class="col-md-12">
                                         <div class="input-group submit-btn-wrap">
-                                            <button class="theme-btn" name="submit" type="submit" id="submit-form">send
-                                                message</button>
+                                            <!-- <button class="theme-btn" name="submit" type="submit" id="submit-form">send
+                                                message</button> -->
+                                            <input type="submit" id="button" value="Send message" class="theme-btn" />
                                         </div>
                                     </div>
                                 </div>
